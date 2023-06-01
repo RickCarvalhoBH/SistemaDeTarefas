@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-
 using SistemaDeTarefas.Data;
 using SistemaDeTarefas.Repositorios;
 using SistemaDeTarefas.Repositorios.Interfaces;
@@ -25,6 +24,7 @@ namespace SistemaDeTarefas
                 );
 
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            builder.Services.AddScoped<ITarefaRepositorio, TerefaRepositorio>();
 
             var app = builder.Build();
 

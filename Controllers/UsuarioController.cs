@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
 using SistemaDeTarefas.Models;
 using SistemaDeTarefas.Repositorios.Interfaces;
 
@@ -34,7 +33,6 @@ namespace SistemaDeTarefas.Controllers
         public async Task<ActionResult<UsuarioModel>> Cadastrar([FromBody] UsuarioModel usuarioModel)
         {
             UsuarioModel usuario = await _usuarioRepositorio.Adicionar(usuarioModel);
-
             return Ok(usuario);
         }
 
@@ -43,7 +41,6 @@ namespace SistemaDeTarefas.Controllers
         {
             usuarioModel.Id = id;
             UsuarioModel usuario = await _usuarioRepositorio.Atualizar(usuarioModel, id);
-
             return Ok(usuario);
         }
 
@@ -51,7 +48,6 @@ namespace SistemaDeTarefas.Controllers
         public async Task<ActionResult<UsuarioModel>> Apagar(int id)
         {
             bool apagado = await _usuarioRepositorio.Apagar(id);
-
             return Ok(apagado);
         }
     }
